@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>loothut | Modern Clothing Ecommerce Mockup</title>
+    <meta
+      name="description"
+      content="loothut is a modern clothing marketplace mockup built to align with Shopify themes and storefronts."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f3f0;
+        --ink: #111111;
+        --muted: #5c5c5c;
+        --accent: #ff6f3d;
+        --accent-dark: #e2582b;
+        --card: #ffffff;
+        --border: #e3d7d0;
+        --shadow: 0 24px 60px rgba(17, 17, 17, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 24px 80px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding-bottom: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        font-size: 1.3rem;
+        letter-spacing: 0.08em;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: var(--accent);
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      nav {
+        display: flex;
+        gap: 20px;
+        font-weight: 500;
+      }
+
+      .nav-actions {
+        display: flex;
+        gap: 12px;
+      }
+
+      .button {
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #fff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(255, 111, 61, 0.25);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+        align-items: center;
+        padding: 40px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.4rem, 3.6vw, 3.4rem);
+        line-height: 1.05;
+      }
+
+      .hero p {
+        color: var(--muted);
+        margin: 16px 0 24px;
+      }
+
+      .hero-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .metric {
+        padding: 16px;
+        border-radius: 18px;
+        background: #fff1ec;
+        border: 1px solid #ffe0d6;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.3rem;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .pill {
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #fff;
+        font-size: 0.9rem;
+      }
+
+      section {
+        margin-top: 60px;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+
+      .section-header h2 {
+        font-size: clamp(1.6rem, 2.4vw, 2rem);
+      }
+
+      .section-header p {
+        color: var(--muted);
+        max-width: 520px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .product-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 16px;
+        display: grid;
+        gap: 12px;
+        box-shadow: 0 16px 40px rgba(17, 17, 17, 0.06);
+      }
+
+      .product-media {
+        background: linear-gradient(135deg, #ffe8df, #f2f7f8);
+        border-radius: 16px;
+        padding: 18px;
+        min-height: 140px;
+        display: grid;
+        place-items: center;
+        font-weight: 600;
+        color: #7b5f55;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .product-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.95rem;
+      }
+
+      .tag {
+        font-size: 0.75rem;
+        background: #fff1ec;
+        color: #b6421f;
+        padding: 4px 8px;
+        border-radius: 999px;
+      }
+
+      .newsletter {
+        background: #111111;
+        color: #fff;
+        border-radius: 28px;
+        padding: 40px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .newsletter form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .newsletter input {
+        flex: 1;
+        min-width: 220px;
+        padding: 12px 16px;
+        border-radius: 999px;
+        border: none;
+      }
+
+      .footer {
+        margin-top: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: space-between;
+        color: var(--muted);
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="brand">
+          <span class="brand-mark">L</span>
+          <span>loothut</span>
+        </div>
+        <nav aria-label="Primary">
+          <a href="#menswear">Menswear</a>
+          <a href="#womenswear">Womenswear</a>
+          <a href="#essentials">Essentials</a>
+          <a href="#lookbook">Lookbook</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="button">Sign in</button>
+          <button class="button primary">Cart (2)</button>
+        </div>
+      </header>
+
+      <section class="hero" id="lookbook">
+        <div>
+          <p class="tag">Shopify-ready storefront mockup</p>
+          <h1>Modern clothing essentials built for bold daily dressing.</h1>
+          <p>
+            loothut blends elevated basics with statement layers. This mockup mirrors a
+            Shopify homepage layout so you can drop it into a theme section, connect
+            product data, and launch quickly.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Free shipping over $150</span>
+            <span class="pill">Worldwide delivery</span>
+            <span class="pill">Size-inclusive fits</span>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>32k+</strong>
+              daily outfits styled
+            </div>
+            <div class="metric">
+              <strong>4.8★</strong>
+              customer love rating
+            </div>
+            <div class="metric">
+              <strong>72 hrs</strong>
+              fast fulfillment
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Shopify theme notes</h3>
+          <p>
+            Replace the product cards with a Shopify Liquid loop like
+            <code>{{ collections.menswear.products }}</code> or embed this section as
+            a custom block. The HTML structure matches Shopify section patterns.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Section-ready markup</span>
+            <span class="pill">Responsive grid</span>
+            <span class="pill">Editable content</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="menswear">
+        <div class="section-header">
+          <div>
+            <h2>Menswear</h2>
+            <p>10 modern staples designed for clean silhouettes and everyday utility.</p>
+          </div>
+          <button class="button">View collection</button>
+        </div>
+        <div class="product-grid" aria-label="Menswear products">
+          <article class="product-card">
+            <div class="product-media">Wool</div>
+            <h3>Arc Wool Overcoat</h3>
+            <div class="product-meta">
+              <span>$210</span>
+              <span class="tag">New</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Denim</div>
+            <h3>Slate Straight Denim</h3>
+            <div class="product-meta">
+              <span>$118</span>
+              <span class="tag">Core</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Tech</div>
+            <h3>Transit Utility Jacket</h3>
+            <div class="product-meta">
+              <span>$164</span>
+              <span class="tag">Limited</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Knit</div>
+            <h3>Ridge Merino Crew</h3>
+            <div class="product-meta">
+              <span>$92</span>
+              <span class="tag">Best seller</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Cotton</div>
+            <h3>Loft Relaxed Tee</h3>
+            <div class="product-meta">
+              <span>$42</span>
+              <span class="tag">Soft touch</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Linen</div>
+            <h3>Harbor Linen Shirt</h3>
+            <div class="product-meta">
+              <span>$88</span>
+              <span class="tag">Breathable</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Tailor</div>
+            <h3>Studio Tapered Trouser</h3>
+            <div class="product-meta">
+              <span>$110</span>
+              <span class="tag">Smart fit</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Fleece</div>
+            <h3>Daybreak Zip Hoodie</h3>
+            <div class="product-meta">
+              <span>$96</span>
+              <span class="tag">Layer</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Leather</div>
+            <h3>Axis Leather Sneaker</h3>
+            <div class="product-meta">
+              <span>$148</span>
+              <span class="tag">Street</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Cargo</div>
+            <h3>Venture Cargo Short</h3>
+            <div class="product-meta">
+              <span>$72</span>
+              <span class="tag">Utility</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="womenswear">
+        <div class="section-header">
+          <div>
+            <h2>Womenswear</h2>
+            <p>10 statement-ready pieces for modern layering and elevated basics.</p>
+          </div>
+          <button class="button">View collection</button>
+        </div>
+        <div class="product-grid" aria-label="Womenswear products">
+          <article class="product-card">
+            <div class="product-media">Silk</div>
+            <h3>Verve Satin Slip Dress</h3>
+            <div class="product-meta">
+              <span>$156</span>
+              <span class="tag">New</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Knit</div>
+            <h3>Bloom Rib Knit Set</h3>
+            <div class="product-meta">
+              <span>$128</span>
+              <span class="tag">Two-piece</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Linen</div>
+            <h3>Coast Linen Blazer</h3>
+            <div class="product-meta">
+              <span>$142</span>
+              <span class="tag">Lightweight</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Denim</div>
+            <h3>Nova Wide Leg Jean</h3>
+            <div class="product-meta">
+              <span>$112</span>
+              <span class="tag">Studio fit</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Cotton</div>
+            <h3>Halo Cropped Tee</h3>
+            <div class="product-meta">
+              <span>$38</span>
+              <span class="tag">Everyday</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Tailor</div>
+            <h3>Contour Pleated Pant</h3>
+            <div class="product-meta">
+              <span>$106</span>
+              <span class="tag">Polished</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Mesh</div>
+            <h3>Orbit Sheer Layer</h3>
+            <div class="product-meta">
+              <span>$76</span>
+              <span class="tag">Layering</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Fleece</div>
+            <h3>Pulse Lounge Jogger</h3>
+            <div class="product-meta">
+              <span>$84</span>
+              <span class="tag">Cozy</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Leather</div>
+            <h3>Mirage Moto Jacket</h3>
+            <div class="product-meta">
+              <span>$198</span>
+              <span class="tag">Iconic</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Heels</div>
+            <h3>Luma Block Heel</h3>
+            <div class="product-meta">
+              <span>$132</span>
+              <span class="tag">Night out</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="essentials">
+        <div class="section-header">
+          <div>
+            <h2>Essentials</h2>
+            <p>10 unisex essentials focused on comfort-forward materials and versatility.</p>
+          </div>
+          <button class="button">View collection</button>
+        </div>
+        <div class="product-grid" aria-label="Essentials products">
+          <article class="product-card">
+            <div class="product-media">Bundle</div>
+            <h3>Core Layer Pack</h3>
+            <div class="product-meta">
+              <span>$96</span>
+              <span class="tag">Value</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Sweat</div>
+            <h3>Drift Oversized Crew</h3>
+            <div class="product-meta">
+              <span>$78</span>
+              <span class="tag">Relaxed</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Terry</div>
+            <h3>Cloud Terry Short</h3>
+            <div class="product-meta">
+              <span>$54</span>
+              <span class="tag">Soft</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Base</div>
+            <h3>Everyday Base Tank</h3>
+            <div class="product-meta">
+              <span>$36</span>
+              <span class="tag">Layering</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Canvas</div>
+            <h3>Nomad Utility Tote</h3>
+            <div class="product-meta">
+              <span>$48</span>
+              <span class="tag">Carry</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Cap</div>
+            <h3>Station Embroidered Cap</h3>
+            <div class="product-meta">
+              <span>$32</span>
+              <span class="tag">Classic</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Sock</div>
+            <h3>Prime Rib Sock Set</h3>
+            <div class="product-meta">
+              <span>$28</span>
+              <span class="tag">3 pack</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Lounge</div>
+            <h3>Midnight Lounge Pant</h3>
+            <div class="product-meta">
+              <span>$88</span>
+              <span class="tag">Travel</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Pullover</div>
+            <h3>Summit Half-Zip</h3>
+            <div class="product-meta">
+              <span>$98</span>
+              <span class="tag">Outdoor</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-media">Slide</div>
+            <h3>Airflow Cloud Slides</h3>
+            <div class="product-meta">
+              <span>$44</span>
+              <span class="tag">Resort</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="newsletter" aria-label="Newsletter signup">
+        <h2>Stay in the loothut loop</h2>
+        <p>
+          Launch-ready for Shopify: connect this form to your email provider or
+          Klaviyo signup block and start collecting subscribers.
+        </p>
+        <form>
+          <input type="email" placeholder="Enter your email" aria-label="Email address" />
+          <button class="button primary" type="submit">Join the list</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <span>© 2024 loothut. All rights reserved.</span>
+        <span>Designed for Shopify Online Store 2.0 compatibility.</span>
+        <span>hello@loothut.store</span>
+      </footer>
+    </div>
+  </body>
+</html>
